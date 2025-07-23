@@ -1,0 +1,296 @@
+// Variables for easy theme management
+$primary: #007bff;
+$primary-dark: #0056b3;
+$background-gradient: linear-gradient(135deg, #f9f9f9 0%, #e3eafc 100%);
+$background-pattern: url("https://www.transparenttextures.com/patterns/cubes.png");
+$card-bg: rgba(255, 255, 255, 0.75);
+$border-radius-lg: 18px;
+$border-radius-md: 12px;
+$border-radius-sm: 8px;
+$box-shadow-lg: 0 8px 32px rgba(0, 0, 0, 0.14);
+$box-shadow-md: 0 4px 24px rgba(0, 0, 0, 0.12);
+$box-shadow-sm: 0 2px 8px rgba(0, 123, 255, 0.1);
+$text-main: #2d3a4b;
+$text-muted: #6c7a89;
+$error: #d32f2f;
+$border-main: #e0e7ef;
+$input-border: #bfcbe3;
+$input-focus: $primary;
+
+// Container
+.container {
+  max-width: 1200px;
+  min-height: 400px;
+  box-shadow: 0 12px 40px rgba(0, 123, 255, 0.18);
+  border-radius: 32px;
+  margin: 32px auto;
+  padding: 28px 18px;
+  background: $background-gradient, $background-pattern;
+  border-radius: $border-radius-lg;
+  box-shadow: $box-shadow-lg;
+  border: 1px solid $border-main;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  backdrop-filter: blur(4px);
+}
+
+textarea::placeholder {
+  color: $text-muted;
+  font-style: italic;
+}
+
+// Form Card
+.form-card {
+  background: $card-bg;
+  border-radius: $border-radius-md;
+  box-shadow: $box-shadow-md;
+  padding: 2rem 1.5rem;
+  margin: 0 auto;
+  max-width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+
+  @media (max-width: 700px) {
+    grid-template-columns: 1fr;
+    padding: 1.2rem 0.5rem;
+    gap: 12px;
+  }
+}
+
+// Titles
+h2,
+.title-center {
+  text-align: center;
+  color: $primary-dark;
+  font-weight: 700;
+  margin-bottom: 1.2rem;
+  font-size: 2rem;
+  letter-spacing: 0.5px;
+  background: linear-gradient(90deg, $primary 40%, $primary-dark 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.title-center {
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+// Inputs
+textarea,
+select {
+  width: 100%;
+  margin-bottom: 0;
+  padding: 10px 12px;
+  border-radius: $border-radius-sm;
+  border: 1.5px solid $input-border;
+  background: rgba(255, 255, 255, 0.85);
+  font-size: 1rem;
+  color: $text-main;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
+
+  &:focus {
+    border-color: $input-focus;
+    outline: none;
+    box-shadow: 0 0 0 2px rgba($primary, 0.12);
+  }
+}
+
+// Button
+button {
+  padding: 12px 24px;
+  background: linear-gradient(90deg, $primary 60%, $primary-dark 100%);
+  color: #fff;
+  border: none;
+  border-radius: $border-radius-sm;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: $box-shadow-sm;
+  transition: background 0.2s, box-shadow 0.2s;
+
+  &:hover {
+    background: linear-gradient(90deg, $primary-dark 60%, $primary 100%);
+    box-shadow: 0 4px 16px rgba(0, 123, 255, 0.14);
+  }
+}
+
+// Centered Button
+.btn-center {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+}
+
+// Response Container
+.response-container {
+  margin-top: 24px;
+  padding: 18px 12px;
+  background: rgba(244, 248, 251, 0.85);
+  border-radius: $border-radius-md;
+  border: 1px solid $border-main;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  color: $text-main;
+  font-size: 1.05rem;
+}
+
+// Error Message
+p-error {
+  font-size: 0.95rem;
+  color: $error;
+  margin-top: 6px;
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.rest-btn {
+  margin-left: 10px;
+}
+
+.justifications-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid $border-main;
+    font-size: 0.95rem;
+  }
+
+  th {
+    background-color: rgba(0, 123, 255, 0.1);
+    color: $text-main;
+  }
+
+  tr:nth-child(even) {
+    background-color: rgba(0, 123, 255, 0.05);
+  }
+}
+
+.p-fluid {
+  background-color: #f9f9f9;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+
+  .p-field {
+    margin-bottom: 1.5rem;
+
+    label {
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+      display: block;
+      color: #333;
+    }
+
+    input {
+      width: 100%;
+      font-size: 1rem;
+    }
+  }
+
+  button {
+    width: 100%;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+
+  .p-card {
+    background-color: #ffffff;
+    border-left: 5px solid #0d6efd;
+    padding: 1.5rem;
+    margin-top: 2rem;
+    border-radius: 0.75rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+
+    h3 {
+      margin-top: 0;
+      color: #0d6efd;
+      text-align: center;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      color: #444;
+
+      strong {
+        color: #222;
+      }
+    }
+  }
+}
+
+.btn-main {
+  margin-top: 10px;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+  flex-wrap: wrap; // allows stacking on small screens
+
+  .btn-main {
+    flex: 1 1 45%;
+    max-width: 200px;
+    font-size: 1rem;
+    padding: 0.75rem;
+    border-radius: 0.5rem;
+  }
+}
+
+.custom-alert {
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-weight: 500;
+  font-size: 1rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s ease-in-out;
+
+  &.success {
+    background-color: #e6f7e6;
+    color: #267a27;
+    border-left: 5px solid #267a27;
+  }
+
+  &.error {
+    background-color: #fdecea;
+    color: #d93025;
+    border-left: 5px solid #d93025;
+  }
+
+  &.info {
+    background-color: #e7f3fe;
+    color: #3178c6;
+    border-left: 5px solid #3178c6;
+  }
+}
+
+// Responsive
+@media (max-width: 800px) {
+  .container,
+  .form-card {
+    max-width: 99vw;
+    padding: 10px 2px;
+  }
+  .response-container {
+    padding: 10px 2px;
+  }
+  h2,
+  .title-center {
+    font-size: 1.1rem;
+  }
+}
